@@ -1,86 +1,112 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 # Boxplot
 
-<!-- badges: start -->
-<!-- badges: end -->
-
-The goal of Boxplot is to …
+The Boxplot package has been designed to allow users to create
+aestheticly pleasing and clean-looking boxplots. This package has
+specifically been designed for plotting numerical data across a variety
+of different categories. This package contains 1 function, the
+boxplot_numeric_category function, which plots a numeric variable across
+the categories of a categorical variable. This function also cleans the
+dataset before creating the boxplot by removing any NA values from the
+dataset. This function works for a variety of different datasets, as can
+be seen in the examples section of the documentation for the
+boxplot_numeric_category function, and in the examples section below.
 
 ## Installation
 
-You can install the released version of Boxplot from
-[CRAN](https://CRAN.R-project.org) with:
+You can install the development version of Boxplot from
+[GitHub](https://github.com/) with:
 
-``` r
-install.packages("Boxplot")
-```
-
-And the development version from [GitHub](https://github.com/) with:
-
-``` r
-# install.packages("devtools")
-devtools::install_github("juliafast/Boxplot")
-#> Downloading GitHub repo juliafast/Boxplot@HEAD
-#> rlang     (0.4.11 -> 0.4.12) [CRAN]
-#> crayon    (1.4.1  -> 1.4.2 ) [CRAN]
-#> cli       (3.0.1  -> 3.1.0 ) [CRAN]
-#> pillar    (1.6.2  -> 1.6.4 ) [CRAN]
-#> tibble    (3.1.4  -> 3.1.6 ) [CRAN]
-#> lifecycle (1.0.0  -> 1.0.1 ) [CRAN]
-#> glue      (1.4.2  -> 1.5.0 ) [CRAN]
-#> generics  (0.1.0  -> 0.1.1 ) [CRAN]
-#> cpp11     (0.3.1  -> 0.4.1 ) [CRAN]
-#> digest    (0.6.27 -> 0.6.28) [CRAN]
-#> tidyr     (1.1.3  -> 1.1.4 ) [CRAN]
-#> Installing 11 packages: rlang, crayon, cli, pillar, tibble, lifecycle, glue, generics, cpp11, digest, tidyr
-#> 
-#> The downloaded binary packages are in
-#>  /var/folders/yg/hs8n6jn96bqfxrgtjsl06g4w0000gn/T//RtmpsCkr4B/downloaded_packages
-#>      checking for file ‘/private/var/folders/yg/hs8n6jn96bqfxrgtjsl06g4w0000gn/T/RtmpsCkr4B/remotese2424bc9073c/juliafast-Boxplot-44be610/DESCRIPTION’ ...  ✓  checking for file ‘/private/var/folders/yg/hs8n6jn96bqfxrgtjsl06g4w0000gn/T/RtmpsCkr4B/remotese2424bc9073c/juliafast-Boxplot-44be610/DESCRIPTION’
-#>   ─  preparing ‘Boxplot’:
-#>      checking DESCRIPTION meta-information ...  ✓  checking DESCRIPTION meta-information
-#>   ─  checking for LF line-endings in source and make files and shell scripts
-#>   ─  checking for empty or unneeded directories
-#>    Omitted ‘LazyData’ from DESCRIPTION
-#>   ─  building ‘Boxplot_0.0.0.9000.tar.gz’
-#>      
-#> 
-```
+    # install.packages("devtools")
+    devtools::install_github("juliafast/Boxplot")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+*For the below examples, I will be using some of the datasets contained
+in the r `datasets` and `dplyr` packages. I will also use piping, which
+requires the `magrittr` package. These packages will have been installed
+as part of downloading the Boxplot package*
+
+Below is a basic example which shows you how to use the
+boxplor_numeric_category function.
+
+The boxplot_numeric_category function in the `Boxplot` package can be
+used to create a boxplot from data contained in the “CO2” dataframe from
+the r `datasets` package that shows the distribution of CO2
+concentration of grass plants in each of two treatment types (chilled or
+nonchilled):
 
 ``` r
+## load the Boxplot package
 library(Boxplot)
-## basic example code
+library(datasets)
+
+boxplot_numeric_category(dataframe = CO2, x = Treatment, y = conc)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+<img src="man/figures/README-example-1.png" width="100%" />
+
+Below is a basic example which shows you how to use the
+boxplor_numeric_category function while using piping to keep the code
+clean:
+
+The boxplot_numeric_category function can also be used to create a
+boxplot from data contained in the “starwars” dataset from the `dplyr`
+package that shows the distribution of the height of starwars characters
+based on the sex of the characters:
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+## load the Boxplot package and magrittr package 
+
+library(magrittr)
+library(dplyr)
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
+
+starwars %>% boxplot_numeric_category(sex, height)
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/master/examples>.
+<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
 
-You can also embed plots, for example:
+Below is an example which shows you how to use the
+boxplot_numeric_category function in conjunction with other functions,
+in this case the **filter** function from the `dplyr` package.
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
+The boxplot_numeric_category function can also be used to create a
+boxplot from data contained in the “storms” dataset from the `dplyr`
+package that shows the distribution of the wind speeds observed for each
+of the storms Caroline and Doris:
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+``` r
+## load the Boxplot package and magrittr package
+
+
+boxplot_numeric_category((storms %>% filter(name == c("Amy", "Doris"))), name, wind)
+```
+
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+
+Below is an example which shows you how not to use the
+boxplot_numeric_category function.
+
+Below is a line of code that shows a use of the boxplot_numeric_category
+function that will return an error message. This function requires a
+categorical input for the “x” argument and a numeric input for the “y”
+argument.
+
+Using the “starwars” dataset from the dplyr package, we will attempt to
+use the boxplot_numeric_category function to create a boxplot that shows
+the distribution of the name of starwars characters based on the sex of
+the characters. Because the y input below, name, is not a numeric input,
+an error message will appear:
+
+``` r
+boxplot_numeric_category(starwars, sex, name)
+#> Error in boxplot_numeric_category(starwars, sex, name): You have entered a non-numeric, non-integer, or non-double input. Please enter a variable of a numeric, integer, or double class for the y input. Class type of the variable you entered is: character
+```

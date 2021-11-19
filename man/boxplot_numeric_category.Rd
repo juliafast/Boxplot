@@ -21,11 +21,8 @@ This function creates a multiple boxplot that shows the distribution of a numeri
 }
 \examples{
 ## Using the "CO2" dataset from the r "datasets" package, create a boxplot that shows the distribution of CO2 concentration of grass plants in each treatment type (chilled or nonchilled)
-boxplot_numeric_category(dataframe = CO2, x = Treatment, y = conc)
+boxplot_numeric_category(dataframe = datasets::CO2, x = Treatment, y = conc)
 
 ## Using the "starwars" dataset from the dplyr package,create a boxplot that shows the distribution of the height of starwars characters based on the sex of the characters
-starwars \%>\% boxplot_numeric_category(sex, height)
-
-## Using the "storms" dataset from the dplyr package, create a boxplot that shows the distribution of the wind speeds observed for each of the storms Caroline and Doris
-boxplot_numeric_category((storms \%>\% filter(name == c("Amy", "Doris"))), name, wind)
+dplyr::starwars \%>\% boxplot_numeric_category(sex, height)
 }

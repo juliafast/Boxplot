@@ -1,3 +1,6 @@
+library(testthat)
+library(Boxplot)
+
 test_that("Testing if Examples for Boxplot Function Work or Do Not Work as Expected", {
   #test to see if examples 1 and 2 (above) run without an error message
   expect_silent(boxplot_numeric_category(dataframe = CO2, x = Treatment, y = conc))
