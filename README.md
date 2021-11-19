@@ -20,7 +20,7 @@ You can install the development version of Boxplot from
     # install.packages("devtools")
     devtools::install_github("juliafast/Boxplot")
 
-## Example
+## Examples
 
 *For the below examples, I will be using some of the datasets contained
 in the r `datasets` and `dplyr` packages. I will also use piping, which
