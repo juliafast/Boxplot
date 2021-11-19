@@ -1,11 +1,11 @@
 Package: Boxplot
-Title: What the Package Does (One Line, Title Case)
+Title: Multiple Boxplot showing Distribution of a Numeric Variable across a Categorical Variable
 Version: 0.0.1
 Authors@R: 
     person(given = "Julia",
            family = "Fast",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
+           email = "j.fast@oceans.ubc.ca",
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: The Boxplot package has been designed to allow users to create aestheticly pleasing and clean-looking boxplots. This package has specifically been designed for plotting numerical data across a variety of different categories. This package contains 1 function, the boxplot_numeric_category function, which plots a numeric variable across the categories of a categorical variable. This function also cleans the dataset before creating the boxplot by removing any NA values from the dataset. This function works for a variety of different datasets, as can be seen in the examples section of the documentation for the boxplot_numeric_category function, and in the examples section below.
 License: MIT + file LICENSE
@@ -20,4 +20,5 @@ Imports:
     ggplot2,
     dplyr,
     tidyr,
-    magrittr
+    magrittr,
+    datasets

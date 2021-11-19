@@ -27,6 +27,22 @@ in the r `datasets` and `dplyr` packages. I will also use piping, which
 requires the `magrittr` package. These packages will have been installed
 as part of downloading the Boxplot package*
 
+``` r
+#load the Boxplot, datasets, dplyr, and magrittr packages
+library(Boxplot)
+library(datasets)
+library(magrittr)
+library(dplyr)
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
+```
+
 Below is a basic example which shows you how to use the
 boxplor_numeric_category function.
 
@@ -37,10 +53,6 @@ concentration of grass plants in each of two treatment types (chilled or
 nonchilled):
 
 ``` r
-## load the Boxplot package
-library(Boxplot)
-library(datasets)
-
 boxplot_numeric_category(dataframe = CO2, x = Treatment, y = conc)
 ```
 
@@ -56,23 +68,10 @@ package that shows the distribution of the height of starwars characters
 based on the sex of the characters:
 
 ``` r
-## load the Boxplot package and magrittr package 
-
-library(magrittr)
-library(dplyr)
-#> 
-#> Attaching package: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
-
 starwars %>% boxplot_numeric_category(sex, height)
 ```
 
-<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
 
 Below is an example which shows you how to use the
 boxplot_numeric_category function in conjunction with other functions,
@@ -84,13 +83,10 @@ package that shows the distribution of the wind speeds observed for each
 of the storms Caroline and Doris:
 
 ``` r
-## load the Boxplot package and magrittr package
-
-
 boxplot_numeric_category((storms %>% filter(name == c("Amy", "Doris"))), name, wind)
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
 Below is an example which shows you how not to use the
 boxplot_numeric_category function.
