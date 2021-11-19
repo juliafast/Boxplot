@@ -10,10 +10,14 @@
 #' @importFrom tidyr drop_na
 #' @importFrom ggplot2 ggplot geom_boxplot theme_linedraw theme element_blank
 #' @examples
-#' ## Using the "CO2" dataset from the r "datasets" package, create a boxplot that shows the distribution of CO2 concentration of grass plants in each treatment type (chilled or nonchilled)
+#' ## Using the "CO2" dataset from the r "datasets" package,
+#' ## create a boxplot that shows the distribution of CO2 concentration
+#' ## of grass plants in each treatment type (chilled or nonchilled)
 #' boxplot_numeric_category(dataframe = datasets::CO2, x = Treatment, y = conc)
 #'
-#' ## Using the "starwars" dataset from the dplyr package,create a boxplot that shows the distribution of the height of starwars characters based on the sex of the characters
+#' ## Using the "starwars" dataset from the dplyr package,
+#' ## create a boxplot that shows the distribution of the height
+#' ## of starwars characters based on the sex of the characters
 #' dplyr::starwars %>% boxplot_numeric_category(sex, height)
 #' @export
 

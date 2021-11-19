@@ -20,9 +20,13 @@ A single panel multiple boxplot showing the distribution of the variable y in ea
 This function creates a multiple boxplot that shows the distribution of a numeric variable in each different category contained in a categorical variable. This function will remove any NA values in the data prior to creation of the boxplot.
 }
 \examples{
-## Using the "CO2" dataset from the r "datasets" package, create a boxplot that shows the distribution of CO2 concentration of grass plants in each treatment type (chilled or nonchilled)
+## Using the "CO2" dataset from the r "datasets" package,
+## create a boxplot that shows the distribution of CO2 concentration
+## of grass plants in each treatment type (chilled or nonchilled)
 boxplot_numeric_category(dataframe = datasets::CO2, x = Treatment, y = conc)
 
-## Using the "starwars" dataset from the dplyr package,create a boxplot that shows the distribution of the height of starwars characters based on the sex of the characters
+## Using the "starwars" dataset from the dplyr package,
+## create a boxplot that shows the distribution of the height
+## of starwars characters based on the sex of the characters
 dplyr::starwars \%>\% boxplot_numeric_category(sex, height)
 }

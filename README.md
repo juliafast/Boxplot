@@ -106,3 +106,13 @@ an error message will appear:
 boxplot_numeric_category(starwars, sex, name)
 #> Error in boxplot_numeric_category(starwars, sex, name): You have entered a non-numeric, non-integer, or non-double input. Please enter a variable of a numeric, integer, or double class for the y input. Class type of the variable you entered is: character
 ```
+
+## References for Function Code
+
+Elferts D. 2016. Remove all of x axis labels in ggplot \[duplicate\].
+Stack Overflow; \[modified 2016 Jan 29; accessed 2021 Oct 25\].
+<https://stackoverflow.com/questions/35090883/remove-all-of-x-axis-labels-in-ggplot>
+
+Leon. 2020. Removing NA from used column in ggplot. R Studio Community;
+\[modified 2020 Aug 16; accessed 2021 Nov 2\].
+<https://community.rstudio.com/t/removing-na-from-used-column-in-ggplot/76579>
