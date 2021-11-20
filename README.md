@@ -28,7 +28,7 @@ requires the `magrittr` package. These packages will have been installed
 as part of downloading the Boxplot package*
 
 ``` r
-#load the Boxplot, datasets, dplyr, and magrittr packages
+#load the Boxplot, datasets, dplyr, and magrittr packages to execute the below examples
 library(Boxplot)
 library(datasets)
 library(magrittr)
@@ -43,8 +43,10 @@ library(dplyr)
 #>     intersect, setdiff, setequal, union
 ```
 
+### Example 1
+
 Below is a basic example which shows you how to use the
-boxplor_numeric_category function.
+boxplot_numeric_category function.
 
 The boxplot_numeric_category function in the `Boxplot` package can be
 used to create a boxplot from data contained in the “CO2” dataframe from
@@ -53,59 +55,48 @@ concentration of grass plants in each of two treatment types (chilled or
 nonchilled):
 
 ``` r
+#create a boxplot showing the distribution of CO2 concentration across each treatment type
 boxplot_numeric_category(dataframe = CO2, x = Treatment, y = conc)
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />
 
-Below is a basic example which shows you how to use the
-boxplor_numeric_category function while using piping to keep the code
-clean:
+### Example 2
 
-The boxplot_numeric_category function can also be used to create a
-boxplot from data contained in the “starwars” dataset from the `dplyr`
-package that shows the distribution of the height of starwars characters
-based on the sex of the characters:
+Below is an example which shows you how to use the
+boxplot_numeric_category function while using piping to keep the code
+clean.
+
+The boxplot_numeric_category function can be used to create a boxplot
+from data contained in the “starwars” dataset from the `dplyr` package
+that shows the distribution of the height of starwars characters based
+on the sex of the characters:
 
 ``` r
+#create a boxplot showing the distribution of height of starwars characters based on the sex of the characters
 starwars %>% boxplot_numeric_category(sex, height)
 ```
 
 <img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
 
+### Example 3
+
 Below is an example which shows you how to use the
-boxplot_numeric_category function in conjunction with other functions,
+boxplot_numeric_category function in conjunction with another function,
 in this case the **filter** function from the `dplyr` package.
 
-The boxplot_numeric_category function can also be used to create a
-boxplot from data contained in the “storms” dataset from the `dplyr`
-package that shows the distribution of the wind speeds observed for each
-of the storms Caroline and Doris:
+The boxplot_numeric_category function can be used to create a boxplot
+from data contained in the “storms” dataset from the `dplyr` package
+that shows the distribution of the wind speeds observed for each of the
+storms Caroline and Doris:
 
 ``` r
+#filter the name column of the storms package to only include the "Amy" and "Doris" storm names
+#create a boxplot showing the distribution of wind speeds observed for the two storms "Amy" and "Doris"
 boxplot_numeric_category((storms %>% filter(name == c("Amy", "Doris"))), name, wind)
 ```
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
-
-Below is an example which shows you how not to use the
-boxplot_numeric_category function.
-
-Below is a line of code that shows a use of the boxplot_numeric_category
-function that will return an error message. This function requires a
-categorical input for the “x” argument and a numeric input for the “y”
-argument.
-
-Using the “starwars” dataset from the dplyr package, we will attempt to
-use the boxplot_numeric_category function to create a boxplot that shows
-the distribution of the name of starwars characters based on the sex of
-the characters. Because the y input below, name, is not a numeric input,
-an error message will appear:
-
-``` r
-boxplot_numeric_category(starwars, sex, name)
-#> Error in boxplot_numeric_category(starwars, sex, name): You have entered a non-numeric, non-integer, or non-double input. Please enter a variable of a numeric, integer, or double class for the y input. Class type of the variable you entered is: character
-```
 
 ## References for Function Code
 

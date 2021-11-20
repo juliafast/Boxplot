@@ -29,49 +29,48 @@ devtools::install_github("juliafast/Boxplot")
 *For the below examples, I will be using some of the datasets contained in the r `datasets` and `dplyr` packages. I will also use piping, which requires the `magrittr` package. These packages will have been installed as part of downloading the Boxplot package* 
 
 ```{r}
-#load the Boxplot, datasets, dplyr, and magrittr packages
+#load the Boxplot, datasets, dplyr, and magrittr packages to execute the below examples
 library(Boxplot)
 library(datasets)
 library(magrittr)
 library(dplyr)
 ```
-Below is a basic example which shows you how to use the boxplor_numeric_category function.
+
+### Example 1
+
+Below is a basic example which shows you how to use the boxplot_numeric_category function.
 
 The boxplot_numeric_category function in the `Boxplot` package can be used to create a boxplot from data contained in the "CO2" dataframe from the r `datasets` package that shows the distribution of CO2 concentration of grass plants in each of two treatment types (chilled or nonchilled):
 ```{r example}
 
+#create a boxplot showing the distribution of CO2 concentration across each treatment type
 boxplot_numeric_category(dataframe = CO2, x = Treatment, y = conc)
 
 ```
 
-Below is a basic example which shows you how to use the boxplor_numeric_category function while using piping to keep the code clean:
+### Example 2
 
-The boxplot_numeric_category function can also be used to create a boxplot from data contained in the "starwars" dataset from the `dplyr` package that shows the distribution of the height of starwars characters based on the sex of the characters:
+Below is an example which shows you how to use the boxplot_numeric_category function while using piping to keep the code clean.
+
+The boxplot_numeric_category function can be used to create a boxplot from data contained in the "starwars" dataset from the `dplyr` package that shows the distribution of the height of starwars characters based on the sex of the characters:
 ```{r}
 
+#create a boxplot showing the distribution of height of starwars characters based on the sex of the characters
 starwars %>% boxplot_numeric_category(sex, height)
 
 ```
 
-Below is an example which shows you how to use the boxplot_numeric_category function in conjunction with other functions, in this case the **filter** function from the `dplyr` package.
+### Example 3
 
-The boxplot_numeric_category function can also be used to create a boxplot from data contained in the "storms" dataset from the `dplyr` package that shows the distribution of the wind speeds observed for each of the storms Caroline and Doris:
+Below is an example which shows you how to use the boxplot_numeric_category function in conjunction with another function, in this case the **filter** function from the `dplyr` package.
+
+The boxplot_numeric_category function can be used to create a boxplot from data contained in the "storms" dataset from the `dplyr` package that shows the distribution of the wind speeds observed for each of the storms Caroline and Doris:
 
 ```{r}
 
+#filter the name column of the storms package to only include the "Amy" and "Doris" storm names
+#create a boxplot showing the distribution of wind speeds observed for the two storms "Amy" and "Doris"
 boxplot_numeric_category((storms %>% filter(name == c("Amy", "Doris"))), name, wind)
-
-```
-
-Below is an example which shows you how not to use the boxplot_numeric_category function. 
-
-Below is a line of code that shows a use of the boxplot_numeric_category function that will return an error message. This function requires a categorical input for the "x" argument and a numeric input for the "y" argument. 
-
-Using the "starwars" dataset from the dplyr package, we will attempt to use the boxplot_numeric_category function to create a boxplot that shows the distribution of the name of starwars characters based on the sex of the characters. Because the y input below, name, is not a numeric input, an error message will appear:
-
-```{r, error=TRUE}
-
-boxplot_numeric_category(starwars, sex, name)
 
 ```
 

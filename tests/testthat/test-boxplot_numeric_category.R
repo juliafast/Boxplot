@@ -3,7 +3,7 @@ library(Boxplot)
 
 test_that("Testing if Examples for Boxplot Function Work or Do Not Work as Expected", {
   #test to see if examples 1 and 2 (above) run without an error message
-  expect_silent(boxplot_numeric_category(dataframe = CO2, x = Treatment, y = conc))
+  expect_silent(boxplot_numeric_category(dataframe = datasets::CO2, x = Treatment, y = conc))
   expect_silent(dplyr::starwars %>% boxplot_numeric_category(sex, height))
   #test to see if example 3 (above) runs without an error message
   expect_silent(boxplot_numeric_category((dplyr::storms %>% dplyr::filter(name == c("Amy", "Doris"))), name, wind))
@@ -13,7 +13,7 @@ test_that("Testing if Examples for Boxplot Function Work or Do Not Work as Expec
 
 test_that("Output Class Type of Boxplot Function Examples is ggplot", {
   #test to see if examples 1-3 and the example with zooplankton biomass data (above) produce a ggplot output as expected
-  expect_s3_class((boxplot_numeric_category(dataframe = CO2, x = Treatment, y = conc)), "ggplot")
+  expect_s3_class((boxplot_numeric_category(dataframe = datasets::CO2, x = Treatment, y = conc)), "ggplot")
   expect_s3_class((dplyr::starwars %>% boxplot_numeric_category(sex, height)), "ggplot")
   expect_s3_class((boxplot_numeric_category((dplyr::storms %>% dplyr::filter(name == c("Amy", "Doris"))), name, wind)), "ggplot")
 })
