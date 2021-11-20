@@ -14,7 +14,7 @@ below.
 You can install the development version of Boxplot from
 [GitHub](https://github.com/) with:
 
-    # install.packages("devtools")
+    #install.packages("devtools")
     devtools::install_github("juliafast/Boxplot")
 
 ## Examples
