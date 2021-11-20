@@ -26,10 +26,10 @@ devtools::install_github("juliafast/Boxplot")
 
 ## Examples
 
-*For the below examples, I will be using some of the datasets contained in the r `datasets` and `dplyr` packages. I will also use piping, which requires the `magrittr` package. These packages will have been installed as part of downloading the Boxplot package.* 
+*The below examples will use datasets contained in the r `datasets` and `dplyr` packages. Piping will also be used, which requires the `magrittr` package. These packages will have been installed as part of downloading the `Boxplot` package.* 
 
 ```{r}
-#load the Boxplot, datasets, dplyr, and magrittr packages to execute the below examples
+#load the Boxplot, datasets, dplyr, and magrittr packages needed to execute the below examples
 library(Boxplot)
 library(datasets)
 library(magrittr)
