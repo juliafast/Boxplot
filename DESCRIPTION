@@ -1,6 +1,6 @@
 Package: Boxplot
 Title: Multiple Boxplot showing Distribution of a Numeric Variable across a Categorical Variable
-Version: 0.0.1
+Version: 0.1.0
 Authors@R: 
     person(given = "Julia",
            family = "Fast",
