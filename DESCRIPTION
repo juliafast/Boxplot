@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "j.fast@oceans.ubc.ca",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: The Boxplot package has been designed to allow users to create aestheticly pleasing and clean-looking boxplots. This package has specifically been designed for plotting numerical data across a variety of different categories. This package contains 1 function, the boxplot_numeric_category function, which plots a numeric variable across the categories of a categorical variable. This function also cleans the dataset before creating the boxplot by removing any NA values from the dataset. This function works for a variety of different datasets, as can be seen in the examples section of the documentation for the boxplot_numeric_category function in this package.
+Description: The Boxplot package allows users to create aesthetically pleasing and clean-looking boxplots. This package has specifically been designed for plotting a numerical variable across a variety of different categories contained in a categorical variable. The function contained in this package, the boxplot_numeric_category function, can be applied to a variety of different datasets, as can be seen in the examples section of the documentation for the boxplot_numeric_category function in this package.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

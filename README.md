@@ -1,16 +1,13 @@
 
 # Boxplot
 
-The Boxplot package has been designed to allow users to create
-aestheticly pleasing and clean-looking boxplots. This package has
-specifically been designed for plotting numerical data across a variety
-of different categories. This package contains 1 function, the
-boxplot_numeric_category function, which plots a numeric variable across
-the categories of a categorical variable. This function also cleans the
-dataset before creating the boxplot by removing any NA values from the
-dataset. This function works for a variety of different datasets, as can
-be seen in the examples section of the documentation for the
-boxplot_numeric_category function, and in the examples section below.
+The Boxplot package allows users to create aesthetically pleasing and
+clean-looking boxplots. This package has specifically been designed for
+plotting a numerical variable across a variety of different categories
+contained in a categorical variable. The function contained in this
+package, the boxplot_numeric_category function, can be applied to a
+variety of different datasets, as can be seen in the examples section
+below.
 
 ## Installation
 
@@ -25,7 +22,7 @@ You can install the development version of Boxplot from
 *For the below examples, I will be using some of the datasets contained
 in the r `datasets` and `dplyr` packages. I will also use piping, which
 requires the `magrittr` package. These packages will have been installed
-as part of downloading the Boxplot package*
+as part of downloading the Boxplot package.*
 
 ``` r
 #load the Boxplot, datasets, dplyr, and magrittr packages to execute the below examples
